@@ -7,3 +7,4 @@ import com.spring.rest.testing.entities.Employee;
 public interface EmployeeDao extends JpaRepository<Employee,Long>{
 
 }
+ 

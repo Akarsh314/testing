@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 //@SuppressWarnings("deprecation")
 @Entity
 public class Organization {
-
+ 
 	@Id
 	private String orgName;
 	private String orgCity;

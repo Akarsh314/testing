@@ -18,7 +18,7 @@ public class AssetDaoImpl implements AssetDao {
 	public List<Asset> findAll() {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	} 
 
 	@Override
 	public List<Asset> findAll(Sort sort) {

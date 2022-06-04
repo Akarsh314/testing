@@ -16,7 +16,7 @@ import com.spring.rest.testing.entities.Organization;
 
 @Entity
 public class OrganizationDaoImpl implements OrganizationDao{
-
+ 
 	@Override
 	public List<Organization> findAll() {
 		// TODO Auto-generated method stub

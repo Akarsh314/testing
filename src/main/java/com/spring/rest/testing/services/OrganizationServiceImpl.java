@@ -28,7 +28,7 @@ public class OrganizationServiceImpl implements OrganizationService {
 //		 list.add(new Organization("Siemens", "Banglore"));
 //		 
 //	 }
-	
+	 
 	@Override
 	public List<Organization> getOrganizationList() {
 		// TODO Auto-generated method stub

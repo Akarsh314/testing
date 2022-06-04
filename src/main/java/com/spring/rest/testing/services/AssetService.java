@@ -10,7 +10,7 @@ import com.spring.rest.testing.entities.Organization;
 
 @Service
 public interface AssetService {
-
+ 
 	public List<Asset> getAssetList();
 
 	public Asset get(Long id);

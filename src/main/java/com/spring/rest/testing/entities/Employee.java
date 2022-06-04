@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 @Entity
 public class Employee {
 
-	@Id
+	@Id 
 	private long empId;
 	private String empName;
 	private String empOrg;

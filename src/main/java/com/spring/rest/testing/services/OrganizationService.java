@@ -16,7 +16,7 @@ public interface OrganizationService {
 	public Organization add(Organization org);
 
 	public void deleteOrg(String orgName) throws Throwable;
-
+ 
 	public Organization update(Organization org);
 	
 }

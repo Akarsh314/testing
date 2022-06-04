@@ -2,7 +2,7 @@ package com.spring.rest.testing.entities;
 
 import org.springframework.data.annotation.Id;
 
-public class Asset {
+public class Asset { 
 
 	
 	@Id

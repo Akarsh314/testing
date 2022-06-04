@@ -42,7 +42,7 @@ public class MyController {
 		
 		return this.organizationService.add(org);
 	}
-	
+	 
 	@PutMapping("/organizations")
 	public Organization updateOrg(@RequestBody Organization org) {
 		

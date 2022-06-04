@@ -10,7 +10,7 @@ import com.spring.rest.testing.entities.Asset;
 import com.spring.rest.testing.entities.Organization;
 
 public class AssetServiceImpl implements AssetService{
-
+ 
 	@Autowired
 	AssetDao assetDao;
 	@Override

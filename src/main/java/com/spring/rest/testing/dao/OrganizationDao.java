@@ -8,4 +8,4 @@ import com.spring.rest.testing.entities.Organization;
 //@Repository
 public interface OrganizationDao extends JpaRepository<Organization, String>{
 
-}
+} 
