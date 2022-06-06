@@ -3,12 +3,17 @@ package com.spring.rest.testing.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.spring.rest.testing.dao.AssetDao;
 import com.spring.rest.testing.dao.OrganizationDao;
 import com.spring.rest.testing.entities.Asset;
 import com.spring.rest.testing.entities.Organization;
 
+//@Service("assetService")
+//@SessionAttributes("asset")
+@Service
 public class AssetServiceImpl implements AssetService{
  
 	@Autowired
@@ -21,9 +26,9 @@ public class AssetServiceImpl implements AssetService{
 	}
 
 	@Override
-	public Asset get(Long id) {
+	public Asset get(Long assetId) {
 		// TODO Auto-generated method stub
-		return assetDao.getReferenceById(id);
+		return assetDao.getByAssetId(assetId);
 	}
 
 	@Override
@@ -31,13 +36,13 @@ public class AssetServiceImpl implements AssetService{
 		// TODO Auto-generated method stub
 		assetDao.save(asset);
 
-		return assetDao.getReferenceById(asset.getAssetId());
+		return assetDao.getByAssetId(asset.getAssetId());
 	}
 
 	@Override
-	public void deleteEmp(Long id) throws Throwable {
+	public void deleteEmp(Long assetId) throws Throwable {
 		// TODO Auto-generated method stub
-		assetDao.deleteById(id);
+		assetDao.deleteByAssetId(assetId);
 		
 	}
 
@@ -45,7 +50,7 @@ public class AssetServiceImpl implements AssetService{
 	public Asset update(Asset asset) {
 		// TODO Auto-generated method stub
 		assetDao.save(asset);
-		return assetDao.getReferenceById(asset.getAssetId());
+		return assetDao.getByAssetId(asset.getAssetId());
 	}
 
 }

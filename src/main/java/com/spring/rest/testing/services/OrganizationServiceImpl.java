@@ -11,23 +11,19 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.spring.rest.testing.dao.OrganizationDao;
 import com.spring.rest.testing.entities.Organization;
 
+//@Service("organizationService")
+//@SessionAttributes("organization")
 @Service
 public class OrganizationServiceImpl implements OrganizationService {
 
 	@Autowired
 	OrganizationDao organizationDao;
-	
-//	List<Organization> list;
-//	 public OrganizationServiceImpl() {
-//		 list = new ArrayList<>();
-//		 list.add(new Organization("TCS", "Chennai"));
-//		 list.add(new Organization("Siemens", "Banglore"));
-//		 
-//	 }
+
 	 
 	@Override
 	public List<Organization> getOrganizationList() {
@@ -36,40 +32,31 @@ public class OrganizationServiceImpl implements OrganizationService {
 		return organizationDao.findAll();
 	}
 	@Override
-	public Organization get(String orgName) {
+	public Organization get(String organizationName) {
 		// TODO Auto-generated method stub
-//		return list.stream().filter(e->e.getOrgName().equalsIgnoreCase(orgName)).findFirst().get();
-		return organizationDao.getReferenceById(orgName);
+		return organizationDao.getByOrganizationName(organizationName);
 	}
 
 	@Override
-	public Organization add(Organization org) {
+	public Organization add(Organization organization) {
 		// TODO Auto-generated method stub
-//		list.add(org);
-//		return list.stream().filter(e->e.equals(org)).findFirst().get();
-		organizationDao.save(org);
-		return organizationDao.getReferenceById(org.getOrgName());
+		organizationDao.save(organization);
+		return organizationDao.getByOrganizationName(organization.getOrganizationName());
 		
 	}
 
 	@Override
-	public void deleteOrg(String orgName) throws Throwable {
+	public void deleteOrganization(String organizationName) throws Throwable {
 		// TODO Auto-generated method stub
-//		list = this.list.stream().filter((e->e.getOrgName()!=orgName)).
-//				collect(Collectors.toList());
-		organizationDao.deleteById(orgName);
+		organizationDao.deleteByOrganizationName(organizationName);
 	
 	}
 
-
-	@SuppressWarnings("deprecation")
 	@Override
-	public Organization update(Organization org) {
+	public Organization update(Organization organization) {
 		// TODO Auto-generated method stub
-//				list.stream().filter(e->e.getOrgName().equalsIgnoreCase(org.getOrgName())).
-//				forEach(e->e.setOrgCity(org.getOrgCity()) );
-		organizationDao.save(org);
-				return organizationDao.getReferenceById(org.getOrgName());
+		organizationDao.save(organization);
+				return organizationDao.getByOrganizationName(organization.getOrganizationName());
 	}
 	
 	

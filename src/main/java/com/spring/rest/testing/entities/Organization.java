@@ -1,21 +1,33 @@
 package com.spring.rest.testing.entities;
 
-import org.hibernate.annotations.Entity;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
+
+//import org.hibernate.annotations.Entity;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 
 //@SuppressWarnings("deprecation")
+//@EntityScan
+//(name = "organization")//@Table(name="Organization", schema="info")
+
 @Entity
 public class Organization {
- 
-	@Id
-	private String orgName;
-	private String orgCity;
+//	@Column(name = "OrganizationName")
+//	@Column(name = "OrganizationCity")
 
-	public Organization(String orgName, String orgCity) {
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	private String organizationName;
+	private String organizationCity;
+
+	public Organization(String organizationName, String organizationCity) {
 		super();
-		this.orgName = orgName;
-		this.orgCity = orgCity;
+		this.organizationName = organizationName;
+		this.organizationCity = organizationCity;
 	}
 
 	public Organization() {
@@ -23,25 +35,25 @@ public class Organization {
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getOrgName() {
-		return orgName;
+	public String getOrganizationName() {
+		return organizationName;
 	}
 
-	public void setOrgName(String orgName) {
-		this.orgName = orgName;
+	public void setOrgName(String organizationName) {
+		this.organizationName = organizationName;
 	}
 
-	public String getOrgCity() {
-		return orgCity;
+	public String getOrganizationCity() {
+		return organizationCity;
 	}
 
-	public void setOrgCity(String orgCity) {
-		this.orgCity = orgCity;
+	public void setOrganizationCity(String organizationCity) {
+		this.organizationCity = organizationCity;
 	}
 
 	@Override
 	public String toString() {
-		return "Organization [orgName=" + orgName + ", orgCity=" + orgCity + "]";
+		return "Organization [orgName=" + organizationName + ", orgCity=" + organizationCity + "]";
 	}
 	
 	

@@ -8,16 +8,16 @@ import com.spring.rest.testing.entities.Asset;
 import com.spring.rest.testing.entities.Employee;
 import com.spring.rest.testing.entities.Organization;
 
-@Service
+//@Service
 public interface AssetService {
  
 	public List<Asset> getAssetList();
 
-	public Asset get(Long id);
+	public Asset get(Long assetId);
 
 	public Asset add(Asset asset);
 
-	public void deleteEmp(Long id) throws Throwable;
+	public void deleteEmp(Long assetId) throws Throwable;
 
 	public Asset update(Asset asset);
 
