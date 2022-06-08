@@ -20,52 +20,52 @@ import com.spring.rest.testing.services.OrganizationServiceImpl;
 
 @RestController
 public class MyController {
-	@Autowired
-	private OrganizationServiceImpl organizationService;
-	
-	@GetMapping("/")
-	public String home() {
-		return "New Welcome to Spring Boottttttttttt !!!!!!!!!!!!";
-	}
-	
-	@GetMapping("/organizations")
-	public List<Organization> getList(){
-		return this.organizationService.getOrganizationList();
-	}
-	
-	@GetMapping("/organizations/{organizationName}")
-	public Organization getOrg(@PathVariable String organizationName) throws Throwable {
-		
-		return this.organizationService.get(organizationName);
-	}
-	
-	@PostMapping(path = "/organizations", consumes="application/json")
-	public Organization addOrg(@RequestBody Organization organization) {
-		
-		return this.organizationService.add(organization);
-	}
-	 
-	@PutMapping("/organizations")
-	public Organization updateOrg(@RequestBody Organization organization) {
-		
-		return this.organizationService.update(organization);
-	}
-	
-	@DeleteMapping("/organizations/{orgName}")
-	public ResponseEntity<HttpStatus> deleteOrg(@PathVariable String organizationName) {
-		
-
-			
-			try {
-				this.organizationService.deleteOrganization(organizationName);
-				return new ResponseEntity<>(HttpStatus.OK);
-			} catch (Throwable e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-			}
-		
-		
-	}
+//	@Autowired
+//	private OrganizationServiceImpl organizationService;
+//	
+//	@GetMapping("/")
+//	public String home() {
+//		return "New Welcome to Spring Boottttttttttt !!!!!!!!!!!!";
+//	}
+//	
+//	@GetMapping("/organizations")
+//	public List<Organization> getList(){
+//		return this.organizationService.getOrganizationList();
+//	}
+//	
+//	@GetMapping("/organizations/{organizationName}")
+//	public Organization getOrg(@PathVariable String organizationName) throws Throwable {
+//		
+//		return this.organizationService.get(organizationName);
+//	}
+//	
+//	@PostMapping(path = "/organizations", consumes="application/json")
+//	public Organization addOrg(@RequestBody Organization organization) {
+//		
+//		return this.organizationService.add(organization);
+//	}
+//	 
+//	@PutMapping("/organizations")
+//	public Organization updateOrg(@RequestBody Organization organization) {
+//		
+//		return this.organizationService.update(organization);
+//	}
+//	
+//	@DeleteMapping("/organizations/{orgName}")
+//	public ResponseEntity<HttpStatus> deleteOrg(@PathVariable String organizationName) {
+//		
+//
+//			
+//			try {
+//				this.organizationService.deleteOrganization(organizationName);
+//				return new ResponseEntity<>(HttpStatus.OK);
+//			} catch (Throwable e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//			}
+//		
+//		
+//	}
 	
 }

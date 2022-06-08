@@ -9,8 +9,8 @@ import com.spring.rest.testing.entities.Organization;
 //@Repository(value="organization")
 public interface OrganizationDao extends JpaRepository<Organization, String>{
 
-	void deleteByOrganizationName(String organizationName);
-
-	Organization getByOrganizationName(String organizationName);
+//	void deleteByOrganizationName(String organizationName);
+//
+//	Organization getByOrganizationName(String organizationName);
 
 } 

@@ -9,13 +9,13 @@ import com.spring.rest.testing.entities.Employee;
 //@Service
 public interface EmployeeService {
  
-	public List<Employee> getEmployeeList();
-
-	public Employee get(Long employeeId);
-
-	public Employee add(Employee employee);
-
-	public void deleteEmp(Long employeeId) throws Throwable;
-
-	public Employee update(Employee employee);
+//	public List<Employee> getEmployeeList();
+//
+//	public Employee get(Long employeeId);
+//
+//	public Employee add(Employee employee);
+//
+//	public void deleteEmp(Long employeeId) throws Throwable;
+//
+//	public Employee update(Employee employee);
 }

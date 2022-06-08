@@ -9,9 +9,9 @@ import com.spring.rest.testing.entities.Asset;
 //@Repository(value="asset")
 public interface AssetDao extends JpaRepository<Asset, Long>{
 //
-	Asset getByAssetId(Long assetId);
-
-	void deleteByAssetId(Long assetId);
+//	Asset getByAssetId(Long assetId);
+//
+//	void deleteByAssetId(Long assetId);
 
 }
  

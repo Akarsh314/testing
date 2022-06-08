@@ -2,6 +2,7 @@ package com.spring.rest.testing.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
@@ -9,29 +10,30 @@ import javax.persistence.Table;
 //import org.hibernate.annotations.Entity;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import javax.persistence.Id;
-//(name = "employee")//@Table(name = "Employee",schema = "info")
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Employee {
 //	@Column(name = "EmployeeId")
-//	@Column(name="EmployeeName")
-//	@Column(name = "EmployeeOrg")
-
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	@Id
 	private long employeeId;
 	private String employeeName;
 	private String employeeOrg;
-//	public Employee(long empId, String empName, String empOrg) {
-//		super();
-//		this.employeeId = empId;
-//		this.employeeName = empName;
-//		this.employeeOrg = empOrg;
-//	}
-//	public Employee() {
-//		super();
-//		// TODO Auto-generated constructor stub
-//	}
+
+	 @ManyToOne(fetch = FetchType.LAZY)
+	 @JoinColumn(name="organizationName", nullable=false, referencedColumnName = "employeeId")
+	    private Organization organization;
+	
+	
+	public Organization getOrganization() {
+		return organization;
+	}
+	public void setOrganization(Organization organization) {
+		this.organization = organization;
+	}
 	public long getEmployeeId() {
 		return employeeId;
 	}

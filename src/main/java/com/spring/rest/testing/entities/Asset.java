@@ -2,38 +2,32 @@ package com.spring.rest.testing.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 //(name = "asset")//@Table(name="Asset",schema = "info")
 @Entity
-public class Asset { 
+public class Asset extends Organization { 
 
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
 //	@Column(name = "AssetId")
-
-//	@Column(name = "AssetName")
-
-//	@Column(name = "AssetOrg")
 	
 	@Id
 	private long assetId;
 	private String assetName;
 	private String assetOrg;
-//	public Asset(long assetId, String assetName, String assetOrg) {
-//		super();
-//		this.assetId = assetId;
-//		this.assetName = assetName;
-//		this.assetOrg = assetOrg;
-//	}
-//	public Asset() {
-//		super();
-//		// TODO Auto-generated constructor stub
-//	}
+
+//	@ManyToOne(fetch = FetchType.LAZY)
+//	@JoinColumn(name="organizationName", nullable=false)
+//    private Organization organization;
+
 	public long getAssetId() {
 		return assetId;
 	}

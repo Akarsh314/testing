@@ -21,46 +21,46 @@ import com.spring.rest.testing.services.EmployeeService;
 
 @RestController
 public class AssetController {
-	@Autowired
-	private AssetService assetService;
+//	@Autowired
+//	private AssetService assetService;
+////	
+	
+//	@GetMapping("/assets")
+//	public List<Asset> getList(){
+//		return this.assetService.getAssetList();
+//	}
 //	
-	
-	@GetMapping("/assets")
-	public List<Asset> getList(){
-		return this.assetService.getAssetList();
-	}
-	
-	@GetMapping("/assets/{assetId}")
-	public Asset getEmp(@PathVariable Long assetId) throws Throwable {
-		
-		return this.assetService.get(assetId);
-	}
-	
-	@PostMapping(path = "/assets", consumes="application/json")
-	public Asset addOrg(@RequestBody Asset asset) {
-		
-		return this.assetService.add(asset);
-	}
-	
-	@PutMapping("/assets")
-	public Asset updateOrg(@RequestBody Asset asset) {
-		
-		return this.assetService.update(asset);
-	}
-	
-	@DeleteMapping("/assets/{assetId}")
-	public ResponseEntity<HttpStatus> deleteOrg(@PathVariable Long assetId) {
-			
-			try {
-				this.assetService.deleteEmp(assetId);
-				return new ResponseEntity<>(HttpStatus.OK);
-			} catch (Throwable e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-			}
-		
-		
-	}
+//	@GetMapping("/assets/{assetId}")
+//	public Asset getEmp(@PathVariable Long assetId) throws Throwable {
+//		
+//		return this.assetService.get(assetId);
+//	}
+//	
+//	@PostMapping(path = "/assets", consumes="application/json")
+//	public Asset addOrg(@RequestBody Asset asset) {
+//		
+//		return this.assetService.add(asset);
+//	}
+//	
+//	@PutMapping("/assets")
+//	public Asset updateOrg(@RequestBody Asset asset) {
+//		
+//		return this.assetService.update(asset);
+//	}
+//	
+//	@DeleteMapping("/assets/{assetId}")
+//	public ResponseEntity<HttpStatus> deleteOrg(@PathVariable Long assetId) {
+//			
+//			try {
+//				this.assetService.deleteEmp(assetId);
+//				return new ResponseEntity<>(HttpStatus.OK);
+//			} catch (Throwable e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+//			}
+//		
+//		
+//	}
 	
 }

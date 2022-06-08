@@ -10,9 +10,9 @@ import com.spring.rest.testing.entities.Employee;
 public interface EmployeeDao extends JpaRepository<Employee,Long>{
 
 
-	Employee getByEmployeeId(long empId);
-
-	void deleteByEmployeeId(Long employeeId);
+//	Employee getByEmployeeId(long empId);
+//
+//	void deleteByEmployeeId(Long employeeId);
 
 	
 	

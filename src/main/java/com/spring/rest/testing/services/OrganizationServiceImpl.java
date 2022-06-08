@@ -21,43 +21,43 @@ import com.spring.rest.testing.entities.Organization;
 @Service
 public class OrganizationServiceImpl implements OrganizationService {
 
-	@Autowired
-	OrganizationDao organizationDao;
-
-	 
-	@Override
-	public List<Organization> getOrganizationList() {
-		// TODO Auto-generated method stub
-//		return this.list;
-		return organizationDao.findAll();
-	}
-	@Override
-	public Organization get(String organizationName) {
-		// TODO Auto-generated method stub
-		return organizationDao.getByOrganizationName(organizationName);
-	}
-
-	@Override
-	public Organization add(Organization organization) {
-		// TODO Auto-generated method stub
-		organizationDao.save(organization);
-		return organizationDao.getByOrganizationName(organization.getOrganizationName());
-		
-	}
-
-	@Override
-	public void deleteOrganization(String organizationName) throws Throwable {
-		// TODO Auto-generated method stub
-		organizationDao.deleteByOrganizationName(organizationName);
-	
-	}
-
-	@Override
-	public Organization update(Organization organization) {
-		// TODO Auto-generated method stub
-		organizationDao.save(organization);
-				return organizationDao.getByOrganizationName(organization.getOrganizationName());
-	}
+//	@Autowired
+//	OrganizationDao organizationDao;
+//
+//	 
+//	@Override
+//	public List<Organization> getOrganizationList() {
+//		// TODO Auto-generated method stub
+////		return this.list;
+//		return organizationDao.findAll();
+//	}
+//	@Override
+//	public Organization get(String organizationName) {
+//		// TODO Auto-generated method stub
+//		return organizationDao.getByOrganizationName(organizationName);
+//	}
+//
+//	@Override
+//	public Organization add(Organization organization) {
+//		// TODO Auto-generated method stub
+//		organizationDao.save(organization);
+//		return organizationDao.getByOrganizationName(organization.getOrganizationName());
+//		
+//	}
+//
+//	@Override
+//	public void deleteOrganization(String organizationName) throws Throwable {
+//		// TODO Auto-generated method stub
+//		organizationDao.deleteByOrganizationName(organizationName);
+//	
+//	}
+//
+//	@Override
+//	public Organization update(Organization organization) {
+//		// TODO Auto-generated method stub
+//		organizationDao.save(organization);
+//				return organizationDao.getByOrganizationName(organization.getOrganizationName());
+//	}
 	
 	
 

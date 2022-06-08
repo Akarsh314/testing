@@ -15,40 +15,40 @@ import com.spring.rest.testing.entities.Organization;
 //@SessionAttributes("employee")
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-	@Autowired
-	EmployeeDao employeeDao;
-	@Override
-	public List<Employee> getEmployeeList() {
-		// TODO Auto-generated method stub
-		return employeeDao.findAll();
-	}
- 
-	@Override
-	public Employee get(Long employeeId) {
-		// TODO Auto-generated method stub
-		return employeeDao.getByEmployeeId(employeeId);
-	}
-
-	@Override
-	public Employee add(Employee employee) {
-		// TODO Auto-generated method stub
-		employeeDao.save(employee);
-		return employeeDao.getByEmployeeId(employee.getEmployeeId());
-	}
-
-	@Override
-	public void deleteEmp(Long employeeId) throws Throwable {
-		// TODO Auto-generated method stub
-		
-		employeeDao.deleteByEmployeeId(employeeId);
-		
-	}
-
-	@Override
-	public Employee update(Employee employee) {
-		// TODO Auto-generated method stub
-		employeeDao.save(employee);
-		return employeeDao.getByEmployeeId(employee.getEmployeeId());
-	}
+//	@Autowired
+//	EmployeeDao employeeDao;
+//	@Override
+//	public List<Employee> getEmployeeList() {
+//		// TODO Auto-generated method stub
+//		return employeeDao.findAll();
+//	}
+// 
+//	@Override
+//	public Employee get(Long employeeId) {
+//		// TODO Auto-generated method stub
+//		return employeeDao.getByEmployeeId(employeeId);
+//	}
+//
+//	@Override
+//	public Employee add(Employee employee) {
+//		// TODO Auto-generated method stub
+//		employeeDao.save(employee);
+//		return employeeDao.getByEmployeeId(employee.getEmployeeId());
+//	}
+//
+//	@Override
+//	public void deleteEmp(Long employeeId) throws Throwable {
+//		// TODO Auto-generated method stub
+//		
+//		employeeDao.deleteByEmployeeId(employeeId);
+//		
+//	}
+//
+//	@Override
+//	public Employee update(Employee employee) {
+//		// TODO Auto-generated method stub
+//		employeeDao.save(employee);
+//		return employeeDao.getByEmployeeId(employee.getEmployeeId());
+//	}
 
 }

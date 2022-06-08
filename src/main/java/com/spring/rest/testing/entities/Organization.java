@@ -1,5 +1,9 @@
 package com.spring.rest.testing.entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +13,8 @@ import javax.persistence.Table;
 //import org.hibernate.annotations.Entity;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 //@SuppressWarnings("deprecation")
 //@EntityScan
@@ -24,22 +30,35 @@ public class Organization {
 	private String organizationName;
 	private String organizationCity;
 
-	public Organization(String organizationName, String organizationCity) {
-		super();
-		this.organizationName = organizationName;
-		this.organizationCity = organizationCity;
+//	@OneToMany(mappedBy = "organization", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private Set<Asset> assets = new HashSet<>();
+	
+	@OneToMany(targetEntity = Organization.class, cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "emp_fk", referencedColumnName = "organizationName")
+    private Set<Employee> employees = new HashSet<>();
+	
+	
+//	public Set<Asset> getAssets() {
+//		return assets;
+//	}
+//
+//	public void setAssets(Set<Asset> assets) {
+//		this.assets = assets;
+//	}
+//
+	public Set<Employee> getEmployees() {
+		return employees;
 	}
 
-	public Organization() {
-		super();
-		// TODO Auto-generated constructor stub
+	public void setEmployees(Set<Employee> employees) {
+		this.employees = employees;
 	}
 
 	public String getOrganizationName() {
 		return organizationName;
 	}
 
-	public void setOrgName(String organizationName) {
+	public void setOrganizationName(String organizationName) {
 		this.organizationName = organizationName;
 	}
 
